@@ -1,0 +1,58 @@
+<section class="container mx-auto mt-20">
+
+<section class="main-slider py-5  px-4 lg:px-0">
+  <div class="flex flex-col lg:flex-row justify-center items-center gap-5">
+    
+    <div class="slider w-full lg:w-[50%]">
+      <owl-carousel-o [options]="customMainSlider">
+        <ng-template carouselSlide>
+          <img src="/images/slider-image-1.jpeg" 
+               class="w-full h-40 sm:h-60 lg:h-80 object-cover rounded-md" alt="slider1">
+        </ng-template>  
+        <ng-template carouselSlide>
+          <img src="/images/slider-image-2.jpeg" 
+               class="w-full h-40 sm:h-60 lg:h-80 object-cover rounded-md" alt="slider2">
+        </ng-template>  
+        <ng-template carouselSlide>
+          <img src="/images/slider-image-3.jpeg" 
+               class="w-full h-40 sm:h-60 lg:h-80 object-cover rounded-md" alt="slider3">
+        </ng-template>  
+        <ng-template carouselSlide>
+          <img src="/images/full-shot-latin-people-training-outdoors.jpg" 
+               class="w-full h-40 sm:h-60 lg:h-80 object-cover rounded-md" alt="">
+        </ng-template>  
+        <ng-template carouselSlide>
+          <img src="/images/laptop-near-tag-tablet-supermarket-cart.jpg" 
+               class="w-full h-40 sm:h-60 lg:h-80 object-cover rounded-md" alt="slider3">
+        </ng-template>  
+      </owl-carousel-o>
+    </div>
+
+    <div class="imgs w-full lg:w-[25%] flex flex-col">
+      <img src="/images/imgi_6_tshirt-banner.jpg" 
+           class="w-full h-28 sm:h-36 lg:h-44 object-cover rounded-lg mb-4" alt="tshirt banner">
+      <img src="/images/imgi_5_banner1.webp" 
+           class="w-full h-28 sm:h-36 lg:h-44 object-cover rounded-lg" alt="nike banner">
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<div class="main-slider">
+  
+  <owl-carousel-o [options]="customMainSlider">
+    
+  </owl-carousel-o>
+</div>
+
+<app-popular-categories></app-popular-categories>
+
+<app-popular-products></app-popular-products>
+
+</section>
+
+ 

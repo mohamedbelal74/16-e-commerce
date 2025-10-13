@@ -1,0 +1,78 @@
+<section class="mt-20">
+  <form [formGroup]="checkOutForm" class="space-y-5 flex items-center justify-center flex-col">
+
+    
+    <div formGroupName="shippingAddress" class="w-[40%]">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl text-green-600">CheckOut</h1>
+      </div>
+
+   
+      <div>
+        <label for="details" class="block mb-1 font-medium text-gray-700">Address Details</label>
+        <textarea
+          id="details"
+          formControlName="details"
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [ngClass]="{
+            'border-red-500': detailsControl?.touched && detailsControl?.invalid,
+            'border-green-500': detailsControl?.touched && detailsControl?.valid
+          }"
+        ></textarea>
+      </div>
+
+
+      <div>
+        <label for="phone" class="block mb-1 font-medium text-gray-700">Phone</label>
+        <input
+          id="phone"
+          type="text"
+          formControlName="phone"
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [ngClass]="{
+            'border-red-500': phoneControl?.touched && phoneControl?.invalid,
+            'border-green-500': phoneControl?.touched && phoneControl?.valid
+          }"
+        />
+      </div>
+
+ 
+      <div>
+        <label for="city" class="block mb-1 font-medium text-gray-700">City</label>
+        <input
+          id="city"
+          type="text"
+          formControlName="city"
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [ngClass]="{
+            'border-red-500': cityControl?.touched && cityControl?.invalid,
+            'border-green-500': cityControl?.touched && cityControl?.valid
+          }"
+        />
+      </div>
+    </div>
+
+    
+    <div class="flex gap-5 w-[40%]">
+ 
+      <button type="button" (click)="submitVisa()" 
+        class="flex-1 py-2 px-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md transition">
+        Pay with Visa
+      </button>
+
+    
+      <button type="button" (click)="submitCash()" 
+        class="flex-1 py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition">
+        Pay with Cash
+      </button>
+    </div>
+
+
+    <div *ngIf="successMessage" class="mt-4 text-green-600 font-semibold">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="mt-4 text-red-600 font-semibold">
+      {{ errorMessage }}
+    </div>
+  </form>
+</section>

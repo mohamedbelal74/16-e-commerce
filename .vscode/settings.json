@@ -1,0 +1,37 @@
+{
+  // ✅ فعل الفورمات مع الحفظ
+  "editor.formatOnSave": true,
+
+  // ✅ خلي Prettier هو الـ Default Formatter
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ✅ Tailwind CSS IntelliSense
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.inlineSuggest.enabled": true,
+
+  // ✅ اختياري: يخلي VS Code يرتب الـ Imports تلقائي
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  }
+}

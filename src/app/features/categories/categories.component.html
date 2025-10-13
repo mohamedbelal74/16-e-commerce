@@ -1,0 +1,31 @@
+<section class="cat-slider py-5 px-4 lg:px-40 mt-20">
+  <h2 *ngIf="!loading" class="text-3xl text-green-600 text-center font-bold drop-shadow-lg mb-10">
+    Categories
+  </h2>
+
+  <!-- حالة التحميل -->
+  <div *ngIf="loading" class="text-center text-gray-500">
+    Loading...
+  </div>
+
+ 
+  <div *ngIf="!loading && categoriesList.length === 0" class="text-center text-red-500">
+    No Categories Found
+  </div>
+
+  
+  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" 
+       *ngIf="categoriesList.length > 0">
+    <div *ngFor="let category of categoriesList; trackBy: trackByFn"
+         class="card bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden cursor-pointer 
+                transition-transform hover:scale-[1.02] dark:bg-gray-800 dark:border-gray-700">
+      <img [src]="category.image" 
+           class="h-40 sm:h-48 lg:h-52 w-full object-cover rounded-t-2xl" [alt]="category.name">
+      <div class="p-4">
+        <h3 class="text-green-600 text-sm sm:text-base font-semibold text-center line-clamp-1">
+          {{ category.name }}
+        </h3>
+      </div>
+    </div>
+  </div>
+</section>

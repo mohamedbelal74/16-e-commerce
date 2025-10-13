@@ -1,0 +1,72 @@
+
+<section class="py-14 bg-gray-50 mt-10">
+  <div class="container mx-auto px-4">
+    <h1 class="text-center text-green-600 text-3xl font-bold mb-10">
+      Product Details
+    </h1>
+
+    <div class="grid sm:grid-cols-12 gap-8">
+    
+      <div class="col-span-12 sm:col-span-4">
+       
+        <div class="shadow-md rounded-lg overflow-hidden mb-4">
+          <img
+            [src]="selectedImage"
+            [alt]="detailsProduct.title"
+            class="w-full h-72 object-contain bg-white rounded-lg"
+          />
+        </div>
+
+       
+        <div class="flex gap-3 overflow-x-auto">
+          @for (img of detailsProduct.images; track $index) {
+            <img
+              [src]="img"
+              (click)="changeImage(img)"
+              class="w-20 h-20 object-contain bg-white border rounded-lg cursor-pointer hover:ring-2 hover:ring-green-500 transition"
+              [class.ring-2]="selectedImage === img"
+              [class.ring-green-600]="selectedImage === img"
+            />
+          }
+        </div>
+      </div>
+
+     
+      <div class="col-span-12 sm:col-span-8">
+
+        <div class="p-10 lg:mx-10 bg-gray-200 rounded-md shadow-md">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 ">
+          {{ detailsProduct.title }}
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          {{ detailsProduct.description }}
+        </p>
+
+        <div class="flex items-center gap-4 mb-4">
+          <span
+            class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm"
+          >
+            {{ detailsProduct.category?.name }}
+          </span>
+          <span
+            class="inline-block bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm"
+          >
+            ⭐ {{ detailsProduct.ratingsAverage }}
+          </span>
+        </div>
+
+        <p class="text-lg font-bold text-green-600 mb-6">
+          {{ detailsProduct.price }} EGP
+        </p>
+
+        <button
+        (click)="addProducttItemCart(detailsProduct._id)"
+          class="bg-green-600 text-white px-6 py-2 rounded-lg shadow hover:bg-green-700 transition"
+        >
+          Add to Cart
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
