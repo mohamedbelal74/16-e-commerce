@@ -23,6 +23,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+                "outputPath": "dist/e-commerce/browser",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
