@@ -47,6 +47,7 @@
           },
           "configurations": {
             "production": {
+                "baseHref": "/16-e-commerce/",
       "budgets": [
   {
     "type": "initial",
